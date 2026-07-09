@@ -1,64 +1,35 @@
 # Virtual Drive Mapper
 
-Aplicación de escritorio para Windows hecha con Electron, React y TypeScript.
+Aplicación de escritorio para Windows para mapear carpetas locales como unidades virtuales.
 
-Su objetivo es mapear carpetas locales como unidades virtuales usando `subst`, guardar esos mapeos y restaurarlos automáticamente al iniciar Windows.
+## Instalación
 
-## Funcionalidades
+1. Descargá `virtual-drive-mapper-1.0.3-setup.exe` desde la sección Releases del repositorio.
+2. Ejecutá el instalador.
+3. Segu&iacute; el asistente de instalación.
+4. Abrí la app desde el acceso directo creado o desde el menú Inicio.
 
-- Mapear una carpeta local a una letra de unidad
-- Desconectar una unidad sin borrar su configuración
-- Eliminar un mapeo persistido
-- Editar letra, nombre y ruta destino
-- Restaurar mapeos al iniciar sesión
-- Activar auto-inicio con Windows
-- Ver espacio disponible de cada unidad
+## Uso
 
-## Requisitos
+- Elegí una letra de unidad.
+- Seleccioná la ruta destino de una carpeta local.
+- Definí un nombre descriptivo.
+- Guardá el mapeo.
+- Activá `Auto-Inicio` si querés que se reconecte al iniciar Windows.
 
-- Windows 10 o superior
-- Node.js 20 o superior
-- npm
+## Build local
 
-## Desarrollo
-
-Instalar dependencias:
+Si querés generar el instalador en tu máquina:
 
 ```bash
 npm install
-```
-
-Ejecutar en modo desarrollo:
-
-```bash
-npm run dev
-```
-
-Validar el proyecto:
-
-```bash
-npm run lint
-npm run typecheck
-```
-
-## Build
-
-Generar instalador de Windows:
-
-```bash
 npm run build:win
 ```
 
 Artefactos generados:
 
-- Instalador: `dist/virtual-drive-mapper-1.0.3-setup.exe`
-- Binario unpacked: `dist/win-unpacked/VirtualDriveMapper.exe`
-
-## Instalación
-
-La instalación por defecto deja el desinstalador en:
-
-`C:\Users\<usuario>\AppData\Local\Programs\virtual-drive-mapper\Uninstall Virtual Drive Mapper.exe`
+- `dist/virtual-drive-mapper-1.0.3-setup.exe`
+- `dist/win-unpacked/VirtualDriveMapper.exe`
 
 ## Comportamiento
 
