@@ -1,8 +1,15 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  getDrives: () => ipcRenderer.invoke('get-drives'),
+  getTakenLetters: () => ipcRenderer.invoke('get-taken-letters'),
+  mapDrive: (drive: any) => ipcRenderer.invoke('map-drive', drive),
+  unmapDrive: (letter: string) => ipcRenderer.invoke('unmap-drive', letter),
+  getAutostart: () => ipcRenderer.invoke('get-autostart'),
+  setAutostart: (enable: boolean) => ipcRenderer.invoke('set-autostart', enable)
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
