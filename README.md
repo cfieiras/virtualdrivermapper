@@ -1,46 +1,34 @@
-# Virtual Drive Mapper
+# temp-app
 
-Aplicación de escritorio para Windows para mapear carpetas locales como unidades virtuales.
+An Electron application with React and TypeScript
 
-## Instalación
+## Recommended IDE Setup
 
-1. Descargá `virtual-drive-mapper-1.0.3-setup.exe` desde la sección Releases del repositorio.
-2. Ejecutá el instalador.
-3. Segu&iacute; el asistente de instalación.
-4. Abrí la app desde el acceso directo creado o desde el menú Inicio.
+- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-## Uso
+## Project Setup
 
-- Elegí una letra de unidad.
-- Seleccioná la ruta destino de una carpeta local.
-- Definí un nombre descriptivo.
-- Guardá el mapeo.
-- Activá `Auto-Inicio` si querés que se reconecte al iniciar Windows.
-
-## Build local
-
-Si querés generar el instalador en tu máquina:
+### Install
 
 ```bash
-npm install
-npm run build:win
+$ npm install
 ```
 
-Artefactos generados:
+### Development
 
-- `dist/virtual-drive-mapper-1.0.3-setup.exe`
-- `dist/win-unpacked/VirtualDriveMapper.exe`
+```bash
+$ npm run dev
+```
 
-## Comportamiento
+### Build
 
-- `Conectar` crea el mapeo con `subst`
-- `Desconectar` quita la unidad temporalmente
-- `Eliminar` borra el mapeo persistido y desconecta si está activo
-- `Auto-Inicio` registra la app en `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
-- Al iniciar con `--hidden`, la app restaura automáticamente los mapeos guardados
+```bash
+# For windows
+$ npm run build:win
 
-## Alcance
+# For macOS
+$ npm run build:mac
 
-La app está enfocada exclusivamente en carpetas locales.
-
-No incluye integración cloud directa.
+# For Linux
+$ npm run build:linux
+```
